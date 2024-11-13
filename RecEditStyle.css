@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif; /* Font for the whole page */
+    background-color: #f4f4f4; /* Light gray background for the body */
+    margin: 0;
+    padding: 20px; /* Padding around the body */
+}
+
+h2 {
+    text-align: center; /* Center align the heading */
+    color: #34495e; /* Dark color for the heading */
+}
+
+form {
+    max-width: 600px; /* Maximum width for the form */
+    margin: 0 auto; /* Center the form */
+    background-color: #ffffff; /* White background for the form */
+    padding: 20px; /* Padding inside the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 8px; /* Space below labels */
+    font-size: 16px; /* Font size for labels */
+    color: #2c3e50; /* Dark color for labels */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    width: 100%; /* Full width inputs */
+    padding: 12px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 8px; /* Rounded edges */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #3498db; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+input[type="file"] {
+    padding: 10px; /* Padding for file input */
+}
+
+input[type="submit"] {
+    width: 100%; /* Full width button */
+    padding: 12px; /* Padding inside button */
+    background-color: #3498db; /* Button color */
+    color: #ffffff; /* White text color */
+    font-size: 16px; /* Font size */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for background color and scale */
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.02); /* Slightly enlarge button on hover */
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98); /* Slightly shrink button on click */
+}
+
+.error-message {
+    color: red; /* Red color for error messages */
+    margin-top: 10px; /* Space above error messages */
+}
+
+.success-message {
+    color: green; /* Green color for success messages */
+    margin-top: 10px; /* Space above success messages */
+}

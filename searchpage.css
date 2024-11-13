@@ -1,0 +1,305 @@
+:root{
+    --main-color:#3498db;
+    --light-color:#3b3c3c;
+    --light-bg:#eee;
+    --white:#ffffff;
+    --black:#303030;
+    --border:.1rem solid var(--light-color);
+    --box-shodow:0 .5rem 1rem rgba(0,0,0,.1);
+ }
+
+ *{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; 
+    border: none;
+    text-decoration: none;
+ }
+ 
+ *::selection{
+    background-color: var(--main-color);
+    color: var(--white);
+ }
+ 
+ *::-webkit-scrollbar{
+    height: .25rem;
+    width: 1rem;
+ }
+ 
+ *::-webkit-scrollbar-track{
+    background-color: rgb(201, 199, 199);
+ }
+ 
+ *::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+    border-radius: 5rem;
+ }
+
+ .header {
+    position: sticky;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    margin-bottom: 20px;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    background-color: var(--black); /* Background color for the header */
+}
+
+.header .navbar.nav-1 {
+    background-color: var(--black);
+}
+
+.header .navbar.nav-2 {
+    background-color: var(--white);
+}
+
+.header .navbar .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo and menu */
+    padding: 0.8rem 2rem; /* Uniform padding */
+}
+
+.header .navbar .flex .logo {
+    font-size: 1.6rem; /* Professional logo size */
+    color: var(--white); 
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+}
+
+.header .navbar .flex .logo i {
+    color: var(--main-color);
+    margin-right: 0.5rem; /* Slightly increased margin for better spacing */
+}
+
+.header .navbar .flex ul {
+    list-style: none;
+    display: flex; /* Display menu items in a row */
+    gap: 1.5rem; /* Increased gap for better separation */
+}
+
+.header .navbar .flex ul li {
+    position: relative; /* Set position to relative for dropdown alignment */
+}
+
+.header .navbar .flex ul li a {
+    padding: 0.7rem 1.5rem; /* Smaller and more professional padding */
+    font-size: 1.1rem; /* Smaller font size */
+    color: var(--black);
+    background-color: var(--white);
+    border-radius: 0.3rem; /* Rounded corners for buttons */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.header .navbar .flex ul li a:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.header .navbar .flex ul li ul {
+    position: absolute; /* Absolute positioning for dropdown */
+    top: 100%; /* Position directly below the menu item */
+    left: 0; /* Align to the left */
+    width: 9rem; /* Adjust submenu width */
+    display: none; /* Hide submenu by default */
+    background-color: var(--white); /* Background for submenu */
+    box-shadow: var(--box-shadow); /* Submenu shadow */
+    border-radius: 0.3rem; /* Rounded corners for submenu */
+    z-index: 999; /* Keep submenu above other elements */
+}
+
+.header .navbar .flex ul li:hover ul {
+    display: block; 
+}
+
+.header .navbar .flex ul li ul li {
+    width: 100%; /* Full width for submenu items */
+}
+
+.header .navbar .flex ul li ul li a {
+    padding: 0.6rem 1.2rem; /* Padding for submenu items */
+    font-size: 1rem; /* Smaller font size for submenu items */
+    color: var(--black); /* Color for submenu items */
+    border-radius: 2;
+    display: block; /* Ensure submenu items are block level */
+    white-space: nowrap;
+}
+
+.header .navbar .flex ul li ul li a:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+
+
+
+
+
+
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Body font */
+    background-color: #f8f9fa; /* Light background */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container for recipe cards */
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
+    justify-content: space-between; /* Space between items */
+    max-width: 1200px; 
+    margin: 0 auto; 
+    gap: 20px; /* Space between items */
+}
+
+/* Recipe card styles */
+.recipe-container {
+    background-color: #ffffff; 
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    overflow: hidden; 
+    width: calc(50% - 10px); /* Each container takes half the width minus space */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    text-align: center; /* Center text in the container */
+}
+
+.recipe-container:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Image container styles */
+.square-image {
+    width: 100%; 
+    height: 200px; 
+    overflow: hidden; 
+    background-color: #e9ecef; /* Light grey background */
+    border-bottom: 4px solid #28a745; /* Green bottom border for style */
+    margin-bottom: 10px;
+}
+
+.square-image img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+/* Headings */
+h2 {
+    font-family: 'Playfair Display', serif; /* Rich font for headings */
+    font-size: 24px; 
+    margin: 15px 0; 
+    color: #333; /* Darker text for contrast */
+}
+
+/* Highlighted text */
+.highlight {
+    color: #28a745; /* Green color for emphasis */
+    font-weight: bold; 
+}
+
+/* Button styles */
+.view-recipe-button {
+    display: inline-block; 
+    padding: 12px 24px; 
+    background-color: #28a745; 
+    color: #ffffff; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    margin: 10px auto; 
+    transition: background-color 0.3s, transform 0.3s; /* Added transform for scaling */
+    font-weight: bold; /* Bold text */
+    font-family: 'Roboto', sans-serif; /* Consistent button font */
+}
+
+.view-recipe-button:hover {
+    background-color: #218838; 
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.footer {
+    background-color: var(--black);
+    padding: 2rem 10rem; /* Reduced padding for a sleeker look */
+    margin-top: 40px;
+}
+
+.footer .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0rem; /* Slightly reduced gap for better alignment */
+    justify-content: space-between;
+}
+
+.footer .flex .box {
+    flex: 1 1 20rem; /* Adjusted width for better fitting */
+}
+
+.footer .flex .box a {
+    display: block;
+    padding: 0.8rem 0; /* Reduced padding for more compact links */
+    font-size: 1.2rem; /* Made the font size smaller */
+}
+
+.footer .flex .box a span {
+    color: var(--white);
+    margin-left: 10px; /* Added margin to create space between icons and text */
+}
+
+.footer .flex .box a:hover span {
+    text-decoration: underline;
+}
+
+.footer .flex .box a i {
+    color: var(--main-color);
+    font-size: 1.2rem; /* Reduced icon size */
+    margin-right: 8px; /* Smaller gap between icons and text */
+}
+
+.footer .flex .box:last-child {
+    text-align: right;
+}
+
+.footer .flex .box:last-child a i {
+    margin-left: 1rem; /* Adjusted gap between last child icons */
+}
+
+.footer .flex .box:first-child a i {
+    margin-right: 1rem; /* Adjusted gap between first child icons */
+}
+
+.footer .flex .box:nth-child(2) {
+    text-align: center;
+}
+
+.footer .credit {
+    padding: 2rem 1rem; /* Reduced padding for a more compact credit section */
+    text-align: center;
+    border-top: var(--border);
+    font-size: 1.3rem; /* Made credit text smaller */
+    color: var(--white);
+    margin-top: 1.5rem;
+}
+
+.footer .credit span {
+    color: var(--main-color);
+}
+
+
+
+
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .recipe-container {
+        width: 100%; /* Full width on small screens */
+    }
+}
+

@@ -1,0 +1,323 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8; /* Light grey background */
+    color: #333;
+    line-height: 1.6;
+}
+
+:root{
+    --main-color:#3498db;
+    --light-color:#3b3c3c;
+    --light-bg:#eee;
+    --white:#ffffff;
+    --black:#303030;
+    --border:.1rem solid var(--light-color);
+    --box-shodow:0 .5rem 1rem rgba(0,0,0,.1);
+ }
+
+ *{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; 
+    border: none;
+    text-decoration: none;
+ }
+ 
+ *::selection{
+    background-color: var(--main-color);
+    color: var(--white);
+ }
+ 
+ *::-webkit-scrollbar{
+    height: .25rem;
+    width: 1rem;
+ }
+ 
+ *::-webkit-scrollbar-track{
+    background-color: rgb(201, 199, 199);
+ }
+ 
+ *::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+    border-radius: 5rem;
+ }
+
+ .header {
+    position: sticky;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    margin-bottom: 20px;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    background-color: var(--black); /* Background color for the header */
+}
+
+.header .navbar.nav-1 {
+    background-color: var(--black);
+}
+
+.header .navbar.nav-2 {
+    background-color: var(--white);
+}
+
+.header .navbar .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo and menu */
+    padding: 0.8rem 2rem; /* Uniform padding */
+}
+
+.header .navbar .flex .logo {
+    font-size: 1.6rem; /* Professional logo size */
+    color: var(--white); 
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+}
+
+.header .navbar .flex .logo i {
+    color: var(--main-color);
+    margin-right: 0.5rem; /* Slightly increased margin for better spacing */
+}
+
+.header .navbar .flex ul {
+    list-style: none;
+    display: flex; /* Display menu items in a row */
+    gap: 1.5rem; /* Increased gap for better separation */
+}
+
+.header .navbar .flex ul li {
+    position: relative; /* Set position to relative for dropdown alignment */
+}
+
+.header .navbar .flex ul li a {
+    padding: 0.7rem 1.5rem; /* Smaller and more professional padding */
+    font-size: 1.1rem; /* Smaller font size */
+    color: var(--black);
+    background-color: var(--white);
+    border-radius: 0.3rem; /* Rounded corners for buttons */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.header .navbar .flex ul li a:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.header .navbar .flex ul li ul {
+    position: absolute; /* Absolute positioning for dropdown */
+    top: 100%; /* Position directly below the menu item */
+    left: 0; /* Align to the left */
+    width: 9rem; /* Adjust submenu width */
+    display: none; /* Hide submenu by default */
+    background-color: var(--white); /* Background for submenu */
+    box-shadow: var(--box-shadow); /* Submenu shadow */
+    border-radius: 0.3rem; /* Rounded corners for submenu */
+    z-index: 999; /* Keep submenu above other elements */
+}
+
+.header .navbar .flex ul li:hover ul {
+    display: block; 
+}
+
+.header .navbar .flex ul li ul li {
+    width: 100%; /* Full width for submenu items */
+}
+
+.header .navbar .flex ul li ul li a {
+    padding: 0.6rem 1.2rem; /* Padding for submenu items */
+    font-size: 1rem; /* Smaller font size for submenu items */
+    color: var(--black); /* Color for submenu items */
+    border-radius: 2;
+    display: block; /* Ensure submenu items are block level */
+    white-space: nowrap;
+}
+
+.header .navbar .flex ul li ul li a:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+/* Contact Container Styles */
+.contact-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+    text-align: center;
+    color: #007bff; /* Blue title */
+    margin-bottom: 30px;
+    font-size: 2.5rem; /* Larger title */
+}
+
+/* Form Container Styles */
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-card {
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.form-header {
+    text-align: center;
+    color: #007bff; /* Blue for headers */
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff; /* Blue focus border */
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Contact Information Styles */
+.contact-info {
+    flex: 1;
+    margin-left: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Light background for contact info */
+}
+
+.contact-info h3 {
+    text-align: center;
+    color: #007bff; /* Blue for headings */
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-item img {
+    margin-right: 10px;
+}
+
+.footer {
+    background-color: var(--black);
+    padding: 2rem 10rem; /* Reduced padding for a sleeker look */
+    margin-top: 40px;
+}
+
+.footer .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0rem; /* Slightly reduced gap for better alignment */
+    justify-content: space-between;
+}
+
+.footer .flex .box {
+    flex: 1 1 20rem; /* Adjusted width for better fitting */
+}
+
+.footer .flex .box a {
+    display: block;
+    padding: 0.8rem 0; /* Reduced padding for more compact links */
+    font-size: 1.2rem; /* Made the font size smaller */
+}
+
+.footer .flex .box a span {
+    color: var(--white);
+    margin-left: 10px; /* Added margin to create space between icons and text */
+}
+
+.footer .flex .box a:hover span {
+    text-decoration: underline;
+}
+
+.footer .flex .box a i {
+    color: var(--main-color);
+    font-size: 1.2rem; /* Reduced icon size */
+    margin-right: 8px; /* Smaller gap between icons and text */
+}
+
+.footer .flex .box:last-child {
+    text-align: right;
+}
+
+.footer .flex .box:last-child a i {
+    margin-left: 1rem; /* Adjusted gap between last child icons */
+}
+
+.footer .flex .box:first-child a i {
+    margin-right: 1rem; /* Adjusted gap between first child icons */
+}
+
+.footer .flex .box:nth-child(2) {
+    text-align: center;
+}
+
+.footer .credit {
+    padding: 2rem 1rem; /* Reduced padding for a more compact credit section */
+    text-align: center;
+    border-top: var(--border);
+    font-size: 1.3rem; /* Made credit text smaller */
+    color: var(--white);
+    margin-top: 1.5rem;
+}
+
+.footer .credit span {
+    color: var(--main-color);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column; /* Stack the form and contact info on small screens */
+    }
+
+    .form-card, .contact-info {
+        margin: 0; /* Reset margin for smaller screens */
+        width: 100%; /* Full width on small screens */
+        margin-bottom: 20px; /* Space between stacked elements */
+    }
+}

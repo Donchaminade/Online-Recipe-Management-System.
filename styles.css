@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('images/bg.avif');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the background covers full height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative;
+    color: #2c3e50;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for better contrast */
+    z-index: -1;
+}
+
+.container {
+    background-color: rgba(243, 247, 248, 0.744); 
+    padding: 0px 40px 40px 40px;
+    border-radius: 15px 15px 10px 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    width: 90%; 
+    max-width: 1000px; 
+    text-align: left;
+    z-index: 1;
+    margin: 20px; 
+}
+
+.recipe-container h2 { 
+    font-weight: bold;
+    font-size: 58px; /* Adjust the font size */
+    color: #000000b3; /* Darker color for the title */
+    text-align: center;
+    background-color: rgba(160, 158, 158, 0.479);
+    border-bottom: 2px solid #000000a5;
+    box-shadow: 0 2px 5px rgba(7, 7, 7, 0.459);
+    border-radius: 15px 15px 0 0;
+    padding-top: 40px;
+    padding-bottom: 18px;
+    margin-bottom: 25px;
+}
+
+.recipe-container {
+    margin-bottom: 35px;
+}
+
+.recipe-container img {
+    display: block; /* Display as block for centering */
+    margin: 0 auto 20px; /* Center the image and add margin below for space */
+    width: 45%; /* Set width to 90% of the container for a bigger image */
+    max-width: 600px; /* Limit the max width for larger screens */
+    height: auto; /* Maintain the aspect ratio */
+    /* border-radius: 15px; */
+    /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.459); */
+    transition: transform 0.3s ease; 
+}
+
+.recipe-container img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.recipe-container p {
+    line-height: 1.6; /* Improved line height for readability */
+    font-size: 18px; /* Increased font size for clarity */
+    color: #333; /* Darker text color for better contrast */
+    margin-bottom: 15px; /* Spacing between paragraphs */
+    text-align: left; /* Align text to the left for professionalism */
+    font-family: 'Arial', sans-serif; /* Clean, sans-serif font */
+    padding: 5px 0; /* Additional padding for paragraphs */
+}
+
+.recipe-container p strong {
+    font-size: 25px; /* Increased font size for clarity */
+    color: #000000;
+    display: inline; /* Make the strong text inline */
+}
+
+.recipe-container p {
+    display: flex; /* Use flexbox for alignment */
+    align-items: flex-start; /* Align items at the start */
+}
+
+.label {
+    display: inline; 
+    font-size: 18px; 
+    color: #333; 
+}
+
+.recipe-container span.highlight {
+    color: #000000b0;
+    font-weight: bold;
+    display: block; /* Change to block to ensure it takes the full width */
+    width: calc(100% - 20px); /* Full width minus padding for alignment */
+    background-color: rgba(205, 200, 200, 0.479); /* Light yellow background color */
+    padding: 16px; /* Padding for space inside the background */
+    border-radius: 5px; /* Rounded edges for the background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.459); /* Subtle shadow for depth */
+    margin-top: 5px; /* Space above the span for separation *//* Spacing between paragraphs for better separation */
+}
+
+
+
+
+.review {
+    margin: 0; /* Remove all margins to eliminate gaps */
+    background-color: #ffffff; /* Use a white background for a cleaner look */
+    padding: 20px 30px; /* Slightly adjust padding for better spacing */
+    border-radius: 15px; /* More pronounced rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for a more elegant effect */
+    transition: transform 0.3s ease; /* Smooth scale effect on hover */
+}
+
+.review:hover {
+    transform: scale(1.02); /* Subtle zoom effect on hover */
+}
+
+.review h2 { 
+    font-weight: bold;
+    font-size: 35px; /* Adjust the font size */
+    color: #000000b3; /* Darker color for the title */
+    margin: 0 0 15px 0; /* Remove top margin and add space below */
+    text-align: center;
+    border-bottom: 2px solid #000000a5;
+    box-shadow: 0 2px 4px rgba(7, 7, 7, 0.459);
+    border-radius: 15px 15px 0 0;
+    padding-top: 20px;
+    padding-bottom: 18px;
+    background-color: rgba(205, 200, 200, 0.479);
+}
+
+.reviewername {
+    font-size: 16px; /* Slightly larger font for better visibility */
+    color: #2c3e50; /* Darker color for improved contrast */
+    margin-bottom: 8px; /* Increased margin for better spacing */
+}
+
+.reviewstar {
+    color: #f39c12;
+    font-size: 24px; /* Increased star size for better visibility */
+    margin-bottom: 10px;
+}
+
+.reviewcomment {
+    font-style: italic;
+    color: #7f8c8d; /* Keeping the color, but adjusted font for better readability */
+    font-size: 16px; /* Standardized font size for comments */
+    line-height: 1.5; /* Improved line height for readability */
+    margin-bottom: 20px;
+}
+
+a button, .a1 button {
+    padding: 12px 30px; /* More padding for a comfortable click area */
+    border: none;
+    background-color: #3498db; /* Blue color for buttons */
+    color: #ffffff; /* White text for contrast */
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a button:hover, .a1 button:hover {
+    background-color: #2980b9; /* Darker blue on hover for feedback */
+    transform: translateY(-3px);
+}
+
+button:focus {
+    outline: none; /* Remove default outline on focus */
+}
+
+.a1 {
+    text-decoration: none; /* Remove underline for buttons */
+    margin-top: 15px; /* Increased margin for better spacing */
+    display: inline-block; /* Keep buttons inline */
+}
+
+.form-label {
+    font-size: 25px; /* Label font size */
+    color: #555; /* Darker color for labels */
+    margin-bottom: 5px; /* Space below each label */
+    font-weight: 500; /* Medium weight for labels */
+}
+
+.form-input {
+    width: 98%; /* Full width inputs */
+    padding: 10px; /* Padding inside the inputs */
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 8px; /* Rounded edges */
+    font-size: 16px; /* Input font size */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.input-textarea {
+    height: 120px; /* Fixed height for textarea */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.form-input:focus {
+    border-color: #3498db; /* Border color on focus */
+    outline: none; /* Remove outline */
+}
+
+.submit-button {
+    width: 100%; /* Full width button */
+    padding: 12px; /* Padding inside the button */
+    background-color: #3498db; /* Button color */
+    color: #ffffff; /* White text color */
+    font-size: 16px; /* Font size */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for background color and scale */
+}
+
+.submit-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.02); /* Slightly enlarge button on hover */
+}
+
+.submit-button1{
+    margin-top: 20px;
+    width: 10%; /* Full width button */
+    padding: 12px; /* Padding inside the button */
+    background-color: #3498db; /* Button color */
+    color: #ffffff; /* White text color */
+    font-size: 16px; /* Font size */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button1:hover {
+    background-color: #ff0000; /* Darker blue on hover */
+    transform: scale(0.9); /* Slightly enlarge button on hover */
+}
+
+
+
+
+
+
+

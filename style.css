@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", system-ui;
+}
+
+:root{
+    --main-color:#3498db;
+    --light-color:#3b3c3c;
+    --light-bg:#eee;
+    --white:#ffffff;
+    --black:#303030;
+    --border:.1rem solid var(--light-color);
+    --box-shodow:0 .5rem 1rem rgba(0,0,0,.1);
+ }
+
+ *{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; 
+    border: none;
+    text-decoration: none;
+ }
+ 
+ *::selection{
+    background-color: var(--main-color);
+    color: var(--white);
+ }
+ 
+ *::-webkit-scrollbar{
+    height: .25rem;
+    width: 1rem;
+ }
+ 
+ *::-webkit-scrollbar-track{
+    background-color: rgb(201, 199, 199);
+ }
+ 
+ *::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+    border-radius: 5rem;
+ }
+
+ .header {
+    position: sticky;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    margin-bottom: 20px;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    background-color: var(--black); /* Background color for the header */
+}
+
+.header .navbar.nav-1 {
+    background-color: var(--black);
+}
+
+.header .navbar.nav-2 {
+    background-color: var(--white);
+}
+
+.header .navbar .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo and menu */
+    padding: 0.8rem 2rem; /* Uniform padding */
+}
+
+.header .navbar .flex .logo {
+    font-size: 1.6rem; /* Professional logo size */
+    color: var(--white); 
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+}
+
+.header .navbar .flex .logo i {
+    color: var(--main-color);
+    margin-right: 0.5rem; /* Slightly increased margin for better spacing */
+}
+
+.header .navbar .flex ul {
+    list-style: none;
+    display: flex; /* Display menu items in a row */
+    gap: 1.5rem; /* Increased gap for better separation */
+}
+
+.header .navbar .flex ul li {
+    position: relative; /* Set position to relative for dropdown alignment */
+}
+
+.header .navbar .flex ul li a {
+    padding: 0.7rem 1.5rem; /* Smaller and more professional padding */
+    font-size: 1.1rem; /* Smaller font size */
+    color: var(--black);
+    background-color: var(--white);
+    border-radius: 0.3rem; /* Rounded corners for buttons */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.header .navbar .flex ul li a:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.header .navbar .flex ul li ul {
+    position: absolute; /* Absolute positioning for dropdown */
+    top: 100%; /* Position directly below the menu item */
+    left: 0; /* Align to the left */
+    width: 9rem; /* Adjust submenu width */
+    display: none; /* Hide submenu by default */
+    background-color: var(--white); /* Background for submenu */
+    box-shadow: var(--box-shadow); /* Submenu shadow */
+    border-radius: 0.3rem; /* Rounded corners for submenu */
+    z-index: 999; /* Keep submenu above other elements */
+}
+
+.header .navbar .flex ul li:hover ul {
+    display: block; 
+}
+
+.header .navbar .flex ul li ul li {
+    width: 100%; /* Full width for submenu items */
+}
+
+.header .navbar .flex ul li ul li a {
+    padding: 0.6rem 1.2rem; /* Padding for submenu items */
+    font-size: 1rem; /* Smaller font size for submenu items */
+    color: var(--black); /* Color for submenu items */
+    border-radius: 2;
+    display: block; /* Ensure submenu items are block level */
+    white-space: nowrap;
+}
+
+.header .navbar .flex ul li ul li a:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+.container{
+    display: flex;
+    padding: 50px;
+    gap: 15px;
+     
+    
+    
+    
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(204, 204, 204,0.5);
+   
+}
+p{
+    max-width: 300px;
+    margin-top:10px ;
+}
+.container .profile{
+    width: 35%;
+}
+.container .contact-details{
+    width: 55%;
+}
+
+.profile .image{
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.profile .work{
+    min-height: 200px;
+    color: #00000050;
+}
+
+.title{
+    color: #aaa;
+    margin-top: 30px;
+  
+    width: 250px;
+}
+
+.contact-details .email{
+    padding: 5px 4px ;
+    margin-top: 20px;
+  
+}
+
+
+
+
+.contact-details .email .item1{
+    margin-top: 4px;
+}
+
+.contact-details .card-container{
+    margin: 100px 0px;
+}
+.card {
+    width: 180px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    
+}
+.card .card-img{
+    border-radius: 5px;
+   
+  
+    overflow: hidden;
+   
+}
+.card-container .card-items{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    padding: 5px 10px;
+}
+.card .card-details{
+    text-align: center;
+    background-color: rgba(8, 111, 170, 0.445);
+    position: absolute;
+   width: 100%;
+   height: 60%;
+  bottom: 10px;
+   left: 0px;
+  opacity: 0;
+   cursor: pointer;
+
+}
+.card-title{
+    margin-bottom: 20px;
+    color:rgb(92, 215, 246) ;
+}
+.card-description{
+  
+    color:rgb(109, 219, 246) ;
+}
+
+
+
+.card:hover .card-details{
+    opacity: 1;
+    transition:  0.7s;
+}
+
+.reviews{
+   margin-top: -80px;
+}
+
+.email .item1{
+    padding-top: 10px;
+    display: flex;
+    
+
+}
+
+.email .item1 .h4{
+   width: 100px;
+   color: rgba(8, 111, 170, 0.445);
+}
+
+.email .item1 span{
+    color: rgba(5, 76, 117, 0.445);
+}
+
+.description .para{
+    color: #4b4a4a;
+    background-color: #aaa;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+.work-para{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #4b4a4a;
+}
+
+.stars
+{
+display: flex;
+font-size: 1.8rem;
+padding: 5px 4px;
+gap: 6px;
+color: gold;
+
+}
+
+.btn{
+    padding: 4px 5px;
+    background-color: rgb(136, 136, 250);
+    border: none;
+    border-radius:4px  ;
+    font-size: 1rem;
+    color: wheat; 
+    margin-top: 10px;
+}
+
+.footer {
+    background-color: var(--black);
+    padding: 2rem 10rem; /* Reduced padding for a sleeker look */
+    margin-top: 40px;
+}
+
+.footer .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0rem; /* Slightly reduced gap for better alignment */
+    justify-content: space-between;
+}
+
+.footer .flex .box {
+    flex: 1 1 20rem; /* Adjusted width for better fitting */
+}
+
+.footer .flex .box a {
+    display: block;
+    padding: 0.8rem 0; /* Reduced padding for more compact links */
+    font-size: 1.2rem; /* Made the font size smaller */
+}
+
+.footer .flex .box a span {
+    color: var(--white);
+    margin-left: 10px; /* Added margin to create space between icons and text */
+}
+
+.footer .flex .box a:hover span {
+    text-decoration: underline;
+}
+
+.footer .flex .box a i {
+    color: var(--main-color);
+    font-size: 1.2rem; /* Reduced icon size */
+    margin-right: 8px; /* Smaller gap between icons and text */
+}
+
+.footer .flex .box:last-child {
+    text-align: right;
+}
+
+.footer .flex .box:last-child a i {
+    margin-left: 1rem; /* Adjusted gap between last child icons */
+}
+
+.footer .flex .box:first-child a i {
+    margin-right: 1rem; /* Adjusted gap between first child icons */
+}
+
+.footer .flex .box:nth-child(2) {
+    text-align: center;
+}
+
+.footer .credit {
+    padding: 2rem 1rem; /* Reduced padding for a more compact credit section */
+    text-align: center;
+    border-top: var(--border);
+    font-size: 1.3rem; /* Made credit text smaller */
+    color: var(--white);
+    margin-top: 1.5rem;
+}
+
+.footer .credit span {
+    color: var(--main-color);
+}
+
