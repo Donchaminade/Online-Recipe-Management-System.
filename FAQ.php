@@ -1,27 +1,37 @@
 <?php
-
 include "config.php"; // Include your database connection file
-
-// Fetch all FAQs from the 'faq' table
-$sql = "SELECT * FROM faq";
-$res = $conn->query($sql);
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $userQuestion = htmlspecialchars($_POST['question']); // Sanitize input
-    $ans = "No answer"; // Default answer
-
-    // Insert user's question and default answer into the database
-    $sql = "INSERT INTO faq (QUESTIONS, ANSWERS) VALUES (?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $userQuestion, $ans);
-
-    if ($stmt->execute()) {
-        echo "Your question has been submitted successfully!";
-    } else {
-        echo "Error: " . $conn->error;
-    }
+session_start();
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
+// Fetch only answered FAQs
+$sql = "SELECT * FROM faq WHERE ANSWERS != 'No answer'";
+$res = $conn->query($sql);
+
+$message = '';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        $message = "Erreur de sécurité. Veuillez réessayer.";
+    } else {
+        $userQuestion = trim($_POST['question']);
+        if (strlen($userQuestion) < 10) {
+            $message = "Votre question doit contenir au moins 10 caractères.";
+        } else {
+            $userQuestion = htmlspecialchars($userQuestion);
+            $ans = "No answer";
+            $sql = "INSERT INTO faq (QUESTIONS, ANSWERS) VALUES (?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ss", $userQuestion, $ans);
+
+            if ($stmt->execute()) {
+                $message = "Votre question a bien été soumise !";
+            } else {
+                $message = "Erreur : " . $conn->error;
+            }
+        }
+    }
+}
 ?>
 
 
@@ -76,11 +86,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- FAQ Form and Display Section -->
 <div class="faq-body">
     <div class="faq-header">
+        <input type="text" id="faqSearch" placeholder="Rechercher une question..." style="margin-bottom:10px;width:100%;padding:8px;">
         <h2>Frequently Asked Questions</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <?php if ($message): ?>
+                <div class="faq-message"><?php echo $message; ?></div>
+            <?php endif; ?>
             <div class="faq-input">
-                <textarea name="question" placeholder="Please enter your question" required style="width: 80%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); font-size: 16px; resize: vertical; margin-bottom: 10px;"></textarea>
-                <button type="submit">Submit</button>
+                <label for="question" class="sr-only">Votre question</label>
+                <textarea id="question" name="question" placeholder="Veuillez saisir votre question" required></textarea>
+                <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+                <button type="submit">Envoyer</button>
             </div>
         </form>
     </div>
@@ -145,6 +161,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+    // Filtre FAQ côté client
+    document.getElementById('faqSearch').addEventListener('input', function() {
+        const search = this.value.toLowerCase();
+        document.querySelectorAll('.faq-item').forEach(function(item) {
+            const question = item.querySelector('.faq-question').textContent.toLowerCase();
+            if (question.includes(search)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+
     if (window.history.replaceState) {
         window.history.replaceState(null, null, window.location.href);
     }
@@ -184,3 +213,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 </html>
+
+<style>
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+</style>
